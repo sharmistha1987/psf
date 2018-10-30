@@ -1,1 +1,212 @@
 
+# In[2]:
+
+
+mylist=[1,2,3,5,7]
+max_num=mylist[0]
+for i in mylist:
+    if i>max_num:
+        max_num=i
+print(max_num)
+
+
+# In[28]:
+
+
+from collections import Counter
+text='My name is sam . My company is SF insu. My name is sam'
+words=text.split()
+word_count=Counter(words) # counter returns dictionary with key = each word and value =no of times that word occured in list
+word_count_list=[]
+for i in word_count.most_common(4): #most_common(k) will return tuple(word,count) where k number of words mostly appear
+    word_count_list.append(i)
+print(word_count_list)
+
+
+
+
+# In[30]:
+
+
+num_pat_list=[]
+for i in range(10):
+    num_pat_list.append(i)
+    print(num_pat_list)
+
+
+# In[37]:
+
+
+num_pat=''
+for i in range(1,10):
+    num_pat+=str(i)
+    print(num_pat)
+
+
+# In[45]:
+
+
+character='**********'
+char_pat=''
+for i in character:
+    char_pat+=i
+    print(char_pat)
+
+
+# In[43]:
+
+
+def char_pat(character,n):
+    for i in range(1,n+1):
+        print(character*i)
+
+char_pat('*',10)
+
+
+# In[7]:
+
+
+arr_m=[1, 2, 90, 10, 110] 
+min_diff=arr_m[1]-arr_m[0]
+for i in range(len(arr_m)-1):
+    if arr_m[i+1]-arr_m[i] < min_diff:   
+        min_diff=abs(arr_m[i+1]-arr_m[i])   # abs minimum difference between two consecutive elements in a list
+print(min_diff)
+    
+
+
+# In[2]:
+
+
+arr=[1, 2, 90, 10, 110] 
+max_diff1=arr[1]-arr[0]
+for i in range(len(arr)-1):
+    if arr[i+1]-arr[i] > max_diff1:   
+        max_diff1=abs(arr[i+1]-arr[i])   # abs maximum difference between two consecutive elements in a list
+print(max_diff1)
+
+
+# In[3]:
+
+
+def maxDiff(arr):
+    
+    max_diff = arr[1] - arr[0] 
+      
+    for i in range(len(arr)): 
+        for j in range(i+1, len(arr)): 
+            if(arr[j] - arr[i] > max_diff):  
+                max_diff = arr[j] - arr[i]  # max diference between any two elements in a list
+      
+    return max_diff 
+      
+arr1 = [1, 2, 90, 10, 110]
+print ("Maximum difference is", maxDiff(arr1)) 
+
+
+# In[4]:
+
+
+def minDiff(arr):
+    
+    min_diff1 = arr[1] - arr[0] 
+      
+    for i in range(len(arr)): 
+        for j in range(i+1, len(arr)): 
+            if(arr[j] - arr[i] < min_diff1):  
+                min_diff1 = arr[j] - arr[i]  # min diference between any two elements in a list
+      
+    return min_diff1
+
+arr2 = [1, 2, 90, 10, 110]
+print ("Minimum difference is", minDiff(arr2))
+
+
+# In[25]:
+
+
+tup_mint=[(0,15),(10,25)]
+mint_list=[]
+for m in tup_mint:
+    for e in m:
+        mint_list.append(e)  # convert list of tuples to list
+        
+max_mint=mint_list[1]-mint_list[0]
+for i in range(len(mint_list)):
+    for j in range(i+1,len(mint_list)):
+        if mint_list[j]-mint_list[i]>max_mint:
+            max_mint=mint_list[j]-mint_list[i] # get max diff between minutes watched
+print(max_mint) 
+
+
+# In[32]:
+
+
+text_1='Hello World me Hello World Sam Hello World us'
+text_1.count('Hello World')
+
+
+# In[42]:
+
+
+text_1='Hello World me Hello World Sam Hello World us'
+text_srch='Hello'
+count=0
+for i in text_1.split():
+    if i==text_srch:
+        count+=1
+print(count)
+    
+
+
+# In[50]:
+
+
+text_1='Hello World!Hello World!Hello World!'
+a=text_1.split('!')
+count=0
+for i in range(len(a)):
+    if a[i]=='Hello World':
+        count+=1
+print(count)
+
+    
+
+
+# In[51]:
+
+
+list('Hello world') # splits individual char of text_1 as elements of list
+
+
+# In[64]:
+
+
+sentence = "Hi my name is Bob"
+total=0
+words = sentence.split()
+for word in words:
+    total+=len(word)
+avg_len_sentence=total/len(words)
+print(avg_len_sentence)
+
+
+# In[97]:
+
+
+ip='12.23.45.87'
+ip_list=ip.split('.')
+str_num=''
+for i in ip_list:
+    str_num+=i
+if str_num.isdigit()==False:
+    print('Invalid IP')
+else:
+    count=0
+    for j in list(ip):
+        if j=='.':
+            count+=1
+    if count==3:
+        print('Valid IP')
+    else:
+        print('Invalid IP')
