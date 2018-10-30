@@ -1,0 +1,150 @@
+questions:
+1. )- programmingl find the max no from the given set of elements in an array (without using max function) 2)- Find the minimum absolute difference between the set of elements of an array.
+
+2.given a list of tuples of movie watched times, find how many unique minutes of the movie did the viewer watch e.g. [(0,15),(10,25)]. The viewer watched 25 minutes of the movie.
+
+3.Object Oriented Design for a data set, Data Structures : Questions on Trees. No Questions on Product Sense, Data Modeling or SQL
+
+4. Out of the string (count) Hello world
+
+5. delete duplicates in a list
+
+6.Python Questions - 1) Print Max element of a given list 2) Print median of a given list 3) Print the first nonrecurring element in a list 4) Print the most recurring element in a list 5) Greatest common Factor
+
+7. SQL questions - A table schema with tables like employee, department, employee_to_projects, projects 1) Select employee from departments where max salary of the department is 40k 2) Select employee assigned to projects 3) Select employee which have the max salary in a given department 4) Select employee with second highest salary 5) Table has two data entries every day for # of apples and oranges sold. write a query to get the difference between the apples and oranges sold on a given day
+
+8. There was a string parsing question via Python. Just know how to parse a string into words or even letters and to apply some sort of logic to the string. 
+
+9. Create DDL (table and foreign keys) for several tables in a provided ERD. ERD contains at least one many to many relationship.
+
+10. SQL: 1. Percentage increase in revenue compared to promoted and non-promoted products. 2. Products classes that has the highest transactions 3. Count of Customers who bought 2 items type (A,B) 4. Don't remember Python: 1. Average length of letters to words. 2. Parse an ip address (This is a favourite FB question) 3. [[A],[A,B],[A,C],[B,D],[C,A]] -- Find the alphabet with highest neighbors? -- (Wasnt able to solve because of time limit but the interviewer was like I get what I want to convey.. I gave her an algo of what I would I have done)
+
+11. Perform a merge-sort with SQL only. 
+
+12. Given a multi-step product feature, write SQL to see how well this feature is doing (loading times, step completion %). Then use Python to constantly update average step time as new values stream in, given that there are too many to store in memory.
+
+13. Query a many to many relationship while not violating the grain of a fact table.
+
+14. 1) Given a number and a array. Python code to find sum of any 2 numbers in a list is equal to a given number. 2) sql question mostly on case when, joins ex: Q3: delete all dupliactes from a table in one query 3) Mostly the interviewer was cornering me by asking not to use regular ways, so he was expecting the answers in a particular way, ex: can't use joins, sub query etc which made very simple questions tough
+
+15. SQL: 1. Get the states with more the than 100000 population 2. Count the number of products which sold more than 10 units 3. Get youngest customer who bought atleast 1 product 4. Get the areas from which we have the products sold Python 1. Count the number of unique words in a sequence? 2. Print the part of the array of numbers 3. Check the substring in the string 4. Question on exceptions
+
+16.SQL:
+1. Get the states with more the than 100000 population
+2. Count the number of products which sold more than 10 units
+3. Get youngest customer who bought atleast 1 product
+4. Get the areas from which we have the products sold
+
+Python
+1. Count the number of unique words in a sequence?
+2. Print the part of the array of numbers
+3. Check the substring in the string
+4. Question on exceptions   
+
+
+Most of the SQL questions aren't too challenging, but a few require you to think a little outside the box. Most of the questions require you to do everything in one pass. Always think of how to optimize your querying.
+Most of the programming related questions are related to lists. The solutions don't necessarily need to be the most optimized solutions in the phone call, but they need to run. You need to explain your thinking/rationale clearly.
+The onsite is 3 case studies and 1 lunch. The case studies are really challenging, and require a lot of on the spot thinking and flexibility. The lunch is an important opportunity to show your passion for your work, your excitement for Facebook, and your ability to fit in well with the culture.
+
+leetcode for sql questions
+
+how to find duplicates in an array
+
+How to rate the popularity of a posted video online.  
+
+delete duplicates in a list
+
+you have to write a function that returns the number of words from a string or a function that returns the substring from a string
+
+Given a raw data table, how would you write the SQL to perform the ETL to get data into a desired format?
+
+
+Count the number of words in a sentence.
+Count the frequency of words from the list and store the results in a hash map
+
+How to do certain types of SQL filtering in one pass rather than using two queries unioned together
+
+How many unique word are in the provided string
+
+Interview Questions
+Python
+1.given an ip address as an input string, validate it and return True/False
+2.count the neighbors of each node in a graph. input graph is a multi dimensional list
+
+SQL
+1. Display the most common name in the table
+2. a case statement related question. pretty straightforward 
+
+Given a multi-step product feature, write SQL to see how well this feature is doing (loading times, step completion %). Then use Python to constantly update average step time as new values stream in, given that there are too many to store in memory.   
+
+
+SQL questions -
+
+A table schema with tables like employee, department, employee_to_projects, projects
+
+1) Select employee from departments where max salary of the department is 40k
+2) Select employee assigned to projects
+3) Select employee which have the max salary in a given department
+4) Select employee with second highest salary
+5) Table has two data entries every day for # of apples and oranges sold. write a query to get the difference between the apples… 
+
+Python Questions -
+
+1) Print Max element of a given list
+2) Print median of a given list
+3) Print the first nonrecurring element in a list
+4) Print the most recurring element in a list
+5) Greatest common Factor   
+
+1)- programmingl find the max no from the given set of elements in an array (without using max function)
+2)- Find the minimum absolute difference between the set of elements of an array.   
+
+python hashmap
+
+Create DDL (table and foreign keys) for several tables in a provided ERD. ERD contains at least one many to many relationship.   
+2 Answers
+Recursively parse a string for a pattern that can be either 1 or 2 characters long.   
+Answer Question
+Perform a merge-sort with SQL only.   
+1 Answer
+Given full authority to "make it work", import a large data set with duplicates into a warehouse while meeting the requirements of a business intelligence designer for query speed.   
+Answer Question
+Query a many to many relationship while not violating the grain of a fact table.   
+
+
+1) Given a number and a array.
+Python code to find sum of any 2 numbers in a list is equal to a given number.
+
+2) sql question mostly on case when, joins
+ex: Q3: delete all dupliactes from a table in one query
+
+3) Mostly the interviewer was cornering me by asking not to use regular ways, so he was expecting the answers in a particular way, ex: can't use joins, sub query… 
+
+SQL:
+1. Percentage increase in revenue compared to promoted and non-promoted products.
+2. Products classes that has the highest transactions
+3. Count of Customers who bought 2 items type (A,B)
+4. Don't remember
+
+Python:
+1. Average length of letters to words.
+2. Parse an ip address (This is a favourite FB question)
+3. [[A],[A,B],[A,C],[B,D],[C,A]] -- Find the alphabet with highest neighbors? -- (Wasnt able to solve because of time limit but the interviewer was like I get what I want to convey.. I gave her an algo of what I would I have done) 
+
+
+SQL:
+1. Percentage increase in revenue compared to promoted and non-promoted products.
+2. Products classes that has the highest transactions
+3. Count of Customers who bought 2 items type (A,B)
+4. Don't remember
+
+Python:
+1. Average length of letters to words.
+2. Parse an ip address (This is a favourite FB question)
+3. [[A],[A,B],[A,C],[B,D],[C,A]] -- Find the alphabet with highest neighbors? -- (Wasnt able to solve because of time limit but the interviewer was like I get what I want to convey.. I gave her an algo of what I would I have done) 
+
+I was referred by one of the FB employee. One of the HR connected to me in a week and asked me about my experience. He was very happy with me and then came the online coding round using coderpad. I was asked 4 SQL and 3 Python questions. I think they have 5 SQL and 5 python question but depending on time bandwidth they ask you as much as… 
+
+
+sql : inner join , cases , order by , limit
+python: avg length of sentence , valid IP address
