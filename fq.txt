@@ -86,7 +86,7 @@ A table schema with tables like employee, department, employee_to_projects, proj
 2) Select employee assigned to projects
 3) Select employee which have the max salary in a given department
 4) Select employee with second highest salary
-5) Table has two data entries every day for # of apples and oranges sold. write a query to get the difference between the apples… 
+5) Table has two data entries every day for # of apples and oranges sold. write a query to get the difference between the applesâ€¦ 
 
 Python Questions -
 
@@ -118,7 +118,7 @@ Python code to find sum of any 2 numbers in a list is equal to a given number.
 2) sql question mostly on case when, joins
 ex: Q3: delete all dupliactes from a table in one query
 
-3) Mostly the interviewer was cornering me by asking not to use regular ways, so he was expecting the answers in a particular way, ex: can't use joins, sub query… 
+3) Mostly the interviewer was cornering me by asking not to use regular ways, so he was expecting the answers in a particular way, ex: can't use joins, sub queryâ€¦ 
 
 SQL:
 1. Percentage increase in revenue compared to promoted and non-promoted products.
@@ -143,7 +143,7 @@ Python:
 2. Parse an ip address (This is a favourite FB question)
 3. [[A],[A,B],[A,C],[B,D],[C,A]] -- Find the alphabet with highest neighbors? -- (Wasnt able to solve because of time limit but the interviewer was like I get what I want to convey.. I gave her an algo of what I would I have done) 
 
-I was referred by one of the FB employee. One of the HR connected to me in a week and asked me about my experience. He was very happy with me and then came the online coding round using coderpad. I was asked 4 SQL and 3 Python questions. I think they have 5 SQL and 5 python question but depending on time bandwidth they ask you as much as… 
+I was referred by one of the FB employee. One of the HR connected to me in a week and asked me about my experience. He was very happy with me and then came the online coding round using coderpad. I was asked 4 SQL and 3 Python questions. I think they have 5 SQL and 5 python question but depending on time bandwidth they ask you as much asâ€¦ 
 
 
 sql : inner join , cases , order by , limit
