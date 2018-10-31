@@ -282,3 +282,10 @@ a.extend(b)
 c=set(a)
 c
 
+dict_sam={'a':1,'b':2,'c':3}
+x=list(dict_sam)
+print(x)
+
+list(dict_sam.keys())
+
+
