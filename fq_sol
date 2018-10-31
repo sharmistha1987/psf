@@ -355,6 +355,34 @@ def hcf(n1,n2):
 hcf(24,108)
 
 
+arr1 = [1, 2, 4, 5, 7] 
+arr2 = [5, 5, 3, 4, 8] 
+sum=9
+for i in range(len(arr1)):
+    for j in range(len(arr2)):
+               if arr1[i]+arr2[j]==sum:
+                 print(arr1[i],arr2[j])
+
+
+from itertools import combinations
+sum1 = 10
+mylist = [5,2,5,9,1]
+
+for var in combinations(mylist, 2): # combinations(<seq>,n) will create possible combinations from values in list in form of tuples(depends on n).
+    if var[0] + var[1] == sum1:
+        print(var[0], var[1])
+        
+        
+ sum1 = 10
+mylist = [5,2,5,9,1]
+count=0
+
+for i in range(len(mylist)): 
+        for j in range(i + 1,len(mylist)): 
+            if mylist[i] + mylist[j] == sum1: 
+                print(mylist[i],mylist[j])
+                count+=1
+print('Total pairs:',count)
 
 
 
