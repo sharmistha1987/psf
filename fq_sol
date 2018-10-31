@@ -194,19 +194,19 @@ print(avg_len_sentence)
 # In[97]:
 
 
-ip='12.23.45.87'
+ip='12.4.45.87'
+invalid=False
 ip_list=ip.split('.')
-str_num=''
-for i in ip_list:
-    str_num+=i
+str_num=''.join(ip_list)
 if str_num.isdigit()==False:
-    print('Invalid IP')
+    invalid=True
+else:    
+    for i in ip_list:
+        if int(i)<0 or int(i)>255:
+            invalid=True
+            break
+            
+if(invalid ==False):
+    print('Valid ip')
 else:
-    count=0
-    for j in list(ip):
-        if j=='.':
-            count+=1
-    if count==3:
-        print('Valid IP')
-    else:
-        print('Invalid IP')
+    print('Invalid ip')
