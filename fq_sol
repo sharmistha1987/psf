@@ -287,5 +287,75 @@ dict_words_freq=dict(words_count)
 print(dict_words_freq)
 
 
+string='fdlahkgfekk'
+string_dict=dict() # create empty dictionary
+first_occur_list=[]
+for c in string:
+    if c not in string_dict:
+        string_dict[c]=1  # for new char intializing key(char) and value(count) in new dictionary
+        first_occur_list.append(c) # set(string)
+    else:
+        string_dict[c]+=1
+
+for i in first_occur_list:
+    if string_dict[i]==1: # check for value in dictionary for element(as key) in list
+        break
+print(i)
+
+list_elem=['ab','cgh','ab','dff','fdd']
+words_dict=dict() # create empty dictionary
+
+first_occur_list=[]
+for word in list_elem:
+    if word not in words_dict:
+        words_dict[word]=1  # intializing key and value for new char
+        first_occur_list.append(word) # set(list_elem)
+    else:
+        words_dict[word]+=1
+
+for i in first_occur_list:
+    if words_dict[i]==1: # check for value in dictionary for element(as key) in list
+        break
+print(i)
+
+text='I am super girl girl girl I am'
+words_dict=dict() # create empty dictionary
+words_list=text.split()
+unique_list=[]
+for word in words_list:
+    if word not in words_dict: #it will look in list of keys of words_dict not in list of values 
+                               # if words.count(word)==1:
+        words_dict[word]=1
+        unique_list.append(word)  # appending single occurence of word
+    else:
+        words_dict[word]+=1
+print(unique_list)
+
+
+my_dict={1:'a',2:'b',3:'b',4:'a'}
+unique_dict={}
+for k,v in my_dict.items():
+    if v not in unique_dict.values():
+        unique_dict[k]=v
+print(unique_dict)
+
+
+def hcf(n1,n2):
+    if n1<n2:
+        smaller=n1
+    else:
+        smaller=n2
+    i=1
+    while i<=smaller:
+        if(n1%i==0 and n2%i==0):
+            hcf=i
+        i+=1
+    print(hcf)
+    
+hcf(24,108)
+
+
+
+
 
 
