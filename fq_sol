@@ -255,17 +255,23 @@ for word in words_list:
         words_dict[word]+=1
 print(words_dict)    
     
-    
+final_list=[]    
 max_frequency=max(words_dict.values())
 for k,v in words_dict.items():
     if v==max_frequency: 
-         print({k:v})
+         x={k:v}
+         final_list.append(x)
+        
+print(final_list)
           
-          
+final_list1=[]          
 min_frequency=min(words_dict.values())
 for k,v in words_dict.items():
     if v==min_frequency: 
-         print({k:v})
+         x={k:v}
+         final_list1.append(x)
+
+print(final_list1)
          
 text='I am am girl girl I am'
 words=text.split()
