@@ -227,4 +227,59 @@ recurs_pattern('ximibi','mi')
 
 
 
+text='I am am girl girl I am'
+words=text.split()
+newlist=[]
+for word in words:
+    if word not in newlist:
+        newlist.append(word) # alternative to set() for removing duplicates
+newlist
+
+
+
+text='I am am girl girl I am'
+words=text.split()
+newlist=[]
+for word in words:
+    if word not in newlist:
+        newlist.append(word) # alternative to set() for removing duplicates
+
+
+text='I am am girl girl I am'
+words_dict=dict() # create empty dictionary
+words_list=text.split()
+for word in words_list:
+    if word not in words_dict:
+        words_dict[word]=1  # intializing key and value for new word
+    else:
+        words_dict[word]+=1
+print(words_dict)    
+    
+    
+max_frequency=max(words_dict.values())
+for k,v in words_dict.items():
+    if v==max_frequency: 
+         print({k:v})
+          
+          
+min_frequency=min(words_dict.values())
+for k,v in words_dict.items():
+    if v==min_frequency: 
+         print({k:v})
+         
+text='I am am girl girl I am'
+words=text.split()
+word_cnt=[words.count(word) for word in words]
+dict_words=dict(zip(words,word_cnt))
+print(dict_words) 
+
+from collections import Counter
+text='I am am girl girl I am'
+words=text.split()
+words_count=Counter(words)
+dict_words_freq=dict(words_count)
+print(dict_words_freq)
+
+
+
 
