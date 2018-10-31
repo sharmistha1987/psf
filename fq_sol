@@ -487,9 +487,9 @@ def fact(n):
     
     odd_pos([1,2,3,4,5,6])
     
-    # Alternative to create list of odd position elements:
+ # Alternative to create list of odd position elements:
     
-    def odd_pos(mylist):
+ def odd_pos(mylist):
    odd_n=list(v for c,v in enumerate(mylist) if c%2 != 0)
    return odd_n
 
