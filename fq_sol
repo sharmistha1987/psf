@@ -282,7 +282,7 @@ print(dict_words)
 from collections import Counter
 text='I am am girl girl I am'
 words=text.split()
-words_count=Counter(words)
+words_count=Counter(words) # returns dictionary with keys as words in text and values as there no of count in text
 dict_words_freq=dict(words_count)
 print(dict_words_freq)
 
