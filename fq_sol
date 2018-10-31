@@ -1,6 +1,4 @@
-
-# In[2]:
-
+'''Print Max element of a given list''':
 
 mylist=[1,2,3,5,7]
 max_num=mylist[0]
@@ -10,8 +8,7 @@ for i in mylist:
 print(max_num)
 
 
-# In[28]:
-
+''' find n most common occuring words in a text''':
 
 from collections import Counter
 text='My name is sam . My company is SF insu. My name is sam'
@@ -25,8 +22,7 @@ print(word_count_list)
 
 
 
-# In[30]:
-
+'''Triangle pattern generation (using numbers 0-10)''':
 
 num_pat_list=[]
 for i in range(10):
@@ -34,7 +30,7 @@ for i in range(10):
     print(num_pat_list)
 
 
-# In[37]:
+'''Triangle pattern generation (using numbers 1-10)''':
 
 
 num_pat=''
@@ -43,7 +39,7 @@ for i in range(1,10):
     print(num_pat)
 
 
-# In[45]:
+'''Triangle pattern generation (using 10 *)''':
 
 
 character='**********'
@@ -53,8 +49,7 @@ for i in character:
     print(char_pat)
 
 
-# In[43]:
-
+'''Triangle pattern generation (using n characters in n lines)''': 
 
 def char_pat(character,n):
     for i in range(1,n+1):
@@ -63,8 +58,9 @@ def char_pat(character,n):
 char_pat('*',10)
 
 
-# In[7]:
 
+
+''' find abs minimum difference between two consecutive elements in a list''':
 
 arr_m=[1, 2, 90, 10, 110] 
 min_diff=arr_m[1]-arr_m[0]
@@ -75,7 +71,7 @@ print(min_diff)
     
 
 
-# In[2]:
+# find abs maximum difference between two consecutive elements in a list:
 
 
 arr=[1, 2, 90, 10, 110] 
@@ -86,7 +82,7 @@ for i in range(len(arr)-1):
 print(max_diff1)
 
 
-# In[3]:
+# max diference between any two elements in a list:
 
 
 def maxDiff(arr):
@@ -104,7 +100,7 @@ arr1 = [1, 2, 90, 10, 110]
 print ("Maximum difference is", maxDiff(arr1)) 
 
 
-# In[4]:
+# min diference between any two elements in a list:
 
 
 def minDiff(arr):
@@ -122,7 +118,7 @@ arr2 = [1, 2, 90, 10, 110]
 print ("Minimum difference is", minDiff(arr2))
 
 
-# In[25]:
+# get max diff between minutes watched:
 
 
 tup_mint=[(0,15),(10,25)]
@@ -139,14 +135,14 @@ for i in range(len(mint_list)):
 print(max_mint) 
 
 
-# In[32]:
+# Count of set of words in a text:
 
 
 text_1='Hello World me Hello World Sam Hello World us'
 text_1.count('Hello World')
 
 
-# In[42]:
+# count of one word in a text:
 
 
 text_1='Hello World me Hello World Sam Hello World us'
@@ -159,7 +155,7 @@ print(count)
     
 
 
-# In[50]:
+# Count of set of words in a text where there is a separator after set of words:
 
 
 text_1='Hello World!Hello World!Hello World!'
@@ -173,13 +169,13 @@ print(count)
     
 
 
-# In[51]:
+# splits individual char of text_1 as elements of list:
 
 
 list('Hello world') # splits individual char of text_1 as elements of list
 
 
-# In[64]:
+# avg length of sentence:
 
 
 sentence = "Hi my name is Bob"
@@ -191,7 +187,7 @@ avg_len_sentence=total/len(words)
 print(avg_len_sentence)
 
 
-# In[97]:
+# valid IP address:
 
 
 ip='12.4.45.87'
@@ -211,7 +207,8 @@ if(invalid ==False):
 else:
     print('Invalid ip')
     
-    
+#Recursively parse a string for a pattern that can be either 1 or 2 characters long :
+
 def recurs_pattern(s,p):
     if len(s)<len(p):
         return False
@@ -226,27 +223,19 @@ def recurs_pattern(s,p):
 recurs_pattern('ximibi','mi')
 
 
-
+# alternative to set() for removing duplicates
 text='I am am girl girl I am'
 words=text.split()
 newlist=[]
 for word in words:
     if word not in newlist:
         newlist.append(word) # alternative to set() for removing duplicates
-newlist
+print(newlist)
 
-
-
-text='I am am girl girl I am'
-words=text.split()
-newlist=[]
-for word in words:
-    if word not in newlist:
-        newlist.append(word) # alternative to set() for removing duplicates
-
+# find occurences of words in a text:
 
 text='I am am girl girl I am'
-words_dict=dict() # create empty dictionary
+words_dict=dict() # create empty dictionary #words_dict={}
 words_list=text.split()
 for word in words_list:
     if word not in words_dict:
@@ -254,7 +243,9 @@ for word in words_list:
     else:
         words_dict[word]+=1
 print(words_dict)    
-    
+
+# find max occuring word(s) in a text:
+
 final_list=[]    
 max_frequency=max(words_dict.values())
 for k,v in words_dict.items():
@@ -263,7 +254,8 @@ for k,v in words_dict.items():
          final_list.append(x)
         
 print(final_list)
-          
+
+# find min occuring word(s) in a text:
 final_list1=[]          
 min_frequency=min(words_dict.values())
 for k,v in words_dict.items():
@@ -272,12 +264,15 @@ for k,v in words_dict.items():
          final_list1.append(x)
 
 print(final_list1)
-         
+ 
+# Alternative to find occurences of words in a text:
 text='I am am girl girl I am'
 words=text.split()
 word_cnt=[words.count(word) for word in words]
 dict_words=dict(zip(words,word_cnt))
 print(dict_words) 
+
+# Alternative to find occurences of words in a text:
 
 from collections import Counter
 text='I am am girl girl I am'
@@ -286,6 +281,7 @@ words_count=Counter(words) # returns dictionary with keys as words in text and v
 dict_words_freq=dict(words_count)
 print(dict_words_freq)
 
+#Print the first nonrecurring element in a string:
 
 string='fdlahkgfekk'
 string_dict=dict() # create empty dictionary
@@ -301,6 +297,8 @@ for i in first_occur_list:
     if string_dict[i]==1: # check for value in dictionary for element(as key) in list
         break
 print(i)
+
+#Print the first nonrecurring element in a list:
 
 list_elem=['ab','cgh','ab','dff','fdd']
 words_dict=dict() # create empty dictionary
@@ -318,6 +316,26 @@ for i in first_occur_list:
         break
 print(i)
 
+# generate a list with unique words in a string:
+
+string='fdlahkgfekk'
+string_dict=dict() # create empty dictionary
+first_occur_list=[]
+unique_list=[]
+for c in string:
+    if c not in string_dict:
+        string_dict[c]=1  # for new char intializing key(char) and value(count) in new dictionary
+        first_occur_list.append(c) # set(string)
+    else:
+        string_dict[c]+=1
+
+for i in first_occur_list:
+    if string_dict[i]==1: # check for value in dictionary for element(as key) in list
+        unique_list.append(i)
+print(unique_list)
+
+# remove duplicates from list:
+
 text='I am super girl girl girl I am'
 words_dict=dict() # create empty dictionary
 words_list=text.split()
@@ -331,6 +349,7 @@ for word in words_list:
         words_dict[word]+=1
 print(unique_list)
 
+# remove duplicates from dictionary:
 
 my_dict={1:'a',2:'b',3:'b',4:'a'}
 unique_dict={}
@@ -339,6 +358,7 @@ for k,v in my_dict.items():
         unique_dict[k]=v
 print(unique_dict)
 
+# Determine GCF/HCF:
 
 def hcf(n1,n2):
     if n1<n2:
@@ -354,6 +374,7 @@ def hcf(n1,n2):
     
 hcf(24,108)
 
+# find pairs where sum of any 2 numbers in 2 given lists is equal to a given sum:
 
 arr1 = [1, 2, 4, 5, 7] 
 arr2 = [5, 5, 3, 4, 8] 
@@ -363,17 +384,17 @@ for i in range(len(arr1)):
                if arr1[i]+arr2[j]==sum:
                  print(arr1[i],arr2[j])
 
+# find pairs where sum of any 2 numbers in a list is equal to a given sum:
 
 from itertools import combinations
 sum1 = 10
 mylist = [5,2,5,9,1]
-
 for var in combinations(mylist, 2): # combinations(<seq>,n) will create possible combinations from values in list in form of tuples(depends on n).
     if var[0] + var[1] == sum1:
         print(var[0], var[1])
         
-        
- sum1 = 10
+# Alternative to find pairs and count of pairs where sum of any 2 numbers in a list is equal to a given sum:       
+sum1 = 10
 mylist = [5,2,5,9,1]
 count=0
 
@@ -384,6 +405,94 @@ for i in range(len(mylist)):
                 count+=1
 print('Total pairs:',count)
 
+# median of list of values:
 
+list2=[2,3,4,5,6,7]
+s_list2=sorted(list2)
+n=len(list2)
+quotient=n//2
+if n<1:
+    None
+elif n%2==1: # odd number length #n%2!=0
+    median=s_list2[quotient]
+    print('median=',median)
+else:
+    median=sum(s_list2[quotient-1:quotient+1])/2
+    print('median=',median)
+    
+# cumulative sum:
+def func1_1(mylist_1):
+    total1=0
+    for i in list(mylist_1):
+        total1+=i
+        yield total1
+  
+ list(func1([4,6,12]))
+
+#alternative to cumulative sum:
+ 
+from itertools import accumulate
+mylist =[4,6,12]
+def func1():
+    return list(accumulate(mylist))
+ 
+# separate out digits from a number:
+
+n=456
+digits = [int(i) for i in str(n)]
+print(digits)
+
+# find average of list of numbers:
+
+def avg_num(list1):
+    n_len=len(list1)
+    total=0
+    for x in list1:
+        total+=x
+    avg=total/n_len
+    return avg
+
+avg_num([1,2,3,4])
+
+#factorial:
+
+def fact(n):
+    if (n==0):
+        return 1
+    else:
+        return n*fact(n-1)
+        
+  # fibonacci:
+  
+  def fibo (n):
+    a=0
+    b=1
+    count=0
+    while count<n:
+     print(a)
+     x=a+b
+     a=b
+     b=x
+     count=count+1
+   
+   # create list of odd position elements:
+   
+   def odd_pos(mylist):
+
+    for i in range(len(mylist)):
+        if i%2==1:
+            x=mylist[i]
+            odd_pos_elem.append(x)
+    return odd_pos_elem
+    
+    odd_pos([1,2,3,4,5,6])
+    
+    # Alternative to create list of odd position elements:
+    
+    def odd_pos(mylist):
+   odd_n=list(v for c,v in enumerate(mylist) if c%2 != 0)
+   return odd_n
+
+odd_pos([1,2,3,4,5,6]
 
 
