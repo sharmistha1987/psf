@@ -289,4 +289,14 @@ print(x)
 list(dict_sam.keys())
 
 
+s = 'arunununghhjj'
+sb = 'nun'
+results = 0
+sub_len = len(sb)
+for i in range(len(s)):
+    if s[i:i+sub_len] == sb:
+        results += 1
+print(results)
+
+
 dictionary=dict((k,v) for k,v in zip([1,2,3],['a','b','c']))
