@@ -210,3 +210,21 @@ if(invalid ==False):
     print('Valid ip')
 else:
     print('Invalid ip')
+    
+    
+def recurs_pattern(s,p):
+    if len(s)<len(p):
+        return False
+    else:
+        if s[0]==p or s[0:2]==p:
+            return True
+        elif len(s[1:])>=len(p):
+                return recurs_pattern(s[1:],p)
+        else:
+            return False
+        
+recurs_pattern('ximibi','mi')
+
+
+
+
