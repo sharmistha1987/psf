@@ -288,6 +288,8 @@ print(x)
 
 list(dict_sam.keys())
 
+dictionary=dict((k,v) for k,v in zip([1,2,3],['a','b','c']))
+
 
 s = 'arunununghhjj'
 sb = 'nun'
@@ -299,4 +301,13 @@ for i in range(len(s)):
 print(results)
 
 
-dictionary=dict((k,v) for k,v in zip([1,2,3],['a','b','c']))
+s = 'arunununghhjj'
+sb = 'nun'
+sub_len = len(sb)
+pos_list=[]
+for i in range(len(s)):
+    if s[i:i+sub_len] == sb:
+        pos=i
+        pos_list.append(i)
+print(pos_list)
+
