@@ -39,6 +39,11 @@ def odd_pos(mylist):
 odd_pos([1,2,3,4,5,6])
 
 
+x={1:'a',2:'b',3:'b',4:'a'}
+y={11:'a',22:'b',33:'b',44:'a'}
+z={**x,**y}
+z
+
 # In[68]:
 
 
@@ -300,6 +305,7 @@ for i in range(len(s)):
         results += 1
 print(results)
 
+# alternative to find function only exception being this will return list of indexes(positions) when substr is found:
 
 s = 'arunununghhjj'
 sb = 'nun'
@@ -310,4 +316,11 @@ for i in range(len(s)):
         pos=i
         pos_list.append(i)
 print(pos_list)
+
+x={1:'a',2:'b',3:'b',4:'a'}
+y={11:'a',22:'b',33:'b',44:'a'}
+z={**x,**y}
+z
+
+
 
