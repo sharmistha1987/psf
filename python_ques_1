@@ -704,3 +704,69 @@ def sum_values1(farg,*args):
 
 sum_values(1,2)
 
+
+
+def func_var(a,b=None):
+    if b:
+        c=a+b
+    else:
+        c=a
+    return c
+
+x=func_var(1)
+print(x)
+
+x=func_var(1,2)
+print(x)
+
+
+
+class A:
+    __x=30 # private var
+    
+    def __func(self): #private func
+        print('private func')
+    
+    def pub_func(self):
+        self.x=self.__x
+        self.__func()
+        return self.x
+        
+ob=A()
+#ob.__x # Error
+#ob._A__x # value 30 (to access private var)
+#ob.__func() # Error
+#ob._A__func() # private func (to access private  func)
+ob.pub_func() # (to access private var and func) private func
+              # 30
+ 
+
+
+    
+class B:
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+    def sum(self):
+        sum_num=self.c+self.d
+        return sum_num
+    
+class C(B):
+    
+    def __init__(self,e,f):
+        self.e=e
+        self.f=f
+        
+    def sum(self):  # overloading
+        print("child sum")
+    
+        
+    #def __sub__(self): # operator overriding (for - in this case)
+        #return self.e-self.f
+
+b=B(1,2)
+c=C(3,4)
+
+print(b.sum())
+c.sum()
+
