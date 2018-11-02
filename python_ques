@@ -322,5 +322,50 @@ y={11:'a',22:'b',33:'b',44:'a'}
 z={**x,**y}
 z
 
+def print_values(**kwargs):
+    for k,v in kwargs.items():
+        print("The value of {} is {}".format(k,v))
+
+print_values(ab="Sammy", cd="Casey") # do not use k:v instead use k=v form, key should be string but shouldn't be in quotes
+
+
+
+def some_kwargs(**kwargs):
+    for k,v in kwargs.items():
+        print("The value of {} is {}".format(k,v))
+
+
+kwargs = {1:"Sammy", 2:"Casey"} # not possible because for using **kwargs keyword should be string.
+kwargs = {'1':"Sammy", '2':"Casey"} # do not use k=v instead use k:v form, key should be string and in quotes
+some_kwargs(**kwargs)
+
+
+def sum_values(*args):
+    c=0
+    for i in args:
+        c+=i
+    print(len(args))
+    return 'c='+ str(c) # function will exit her.subsequent statements if written won't be executed.
+    
+a=sum_values()
+print(a) -->0
+args=[1]
+b=sum_values(*args)
+b -->1
+
+
+def sum_values1(farg,*args):
+    for i in args:
+        c=farg+i
+    print(len(args))
+    return 'c='+ str(c)
+
+sum_values(1,2) --> 3
+
+
+
+
+
+
 
 
