@@ -16,7 +16,8 @@ print(list(str2))
 # In[7]:
 
 
-a=reversed(list(str2))
+a=reversed(str2)
+list(a)
 
 
 # In[9]:
@@ -61,7 +62,7 @@ while True:
     if s == "done":
         break
     try:
-        num.append(int(s)) # keep on appending user input
+        num.append(int(s)) # keep on appending user input.input() returns string
     except:
         print("Invalid input")
     finally:
@@ -147,11 +148,16 @@ count_1('sismis','i')
 
 def list_tuple(sequence):
     count=0
-    for i in list(sequence):
-       # if word_search==i:
+    #newlist=[]
+    for i in sequence:
         count+=1
-        yield i,count
+        yield i,count #yield i,count # use yield for generating tuples in list .if return used then function will retun one tuple and exit out.
+        #x=(i,count)
+        #newlist.append(x)
+    #return newlist
+        
 list(list_tuple('abcd'))
+#list_tuple('abcd') # if yield not used
 
 
 # In[4]:
