@@ -775,3 +775,18 @@ c=C(3,4)
 print(b.sum())
 c.sum()
 
+
+
+my_dict={'first':1,'second':2,'third':3,'Fourth':4}
+
+#sorted(my_dict.values())
+
+sorted(my_dict,key=my_dict.__getitem__)
+
+#sorted_val
+
+#sorted(my_dict)
+
+#sorted(my_dict,key=str.lower)
+
+
