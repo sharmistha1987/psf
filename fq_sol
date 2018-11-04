@@ -135,6 +135,18 @@ for i in range(len(mint_list)):
 print(max_mint) 
 
 
+# get max diff between minutes watched:
+
+
+list_mint=[(0,15),(10,20),(0,25)]
+newlist=[]
+for x,y in list_mint:
+    diff=y-x
+    newlist.append(diff)
+    
+print(max(newlist))
+
+
 # Count of set of words in a text:
 
 
