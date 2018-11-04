@@ -363,6 +363,29 @@ def sum_values1(farg,*args):
 sum_values(1,2) --> 3
 
 
+# Another way of doing factorial:
+
+def factn(n):
+
+    try:
+        if n<0:
+            raise Exception
+    
+    except Exception as e:
+        print('Invalid Value')
+    
+    else:
+        fact=1
+    
+        if n==0:
+             fact=1
+                
+        while n>0:
+            fact*=n
+            n=n-1
+            
+        print(fact)
+
 
 
 
