@@ -1,0 +1,18 @@
+def ip_check(ip):
+    ip_list=str(ip).split('.')
+    ip_str=''.join(ip_list)
+    isvalid=True
+    if len(ip_list)<4: # length should be 4
+        isvalid=False
+    elif ip_str.isdigit()==False: # lf elements in ip should be digit , if length is 4
+            isvalid=False
+    else:
+        for i in ip_list:
+            if int(i)<0 or int(i)>255:  # lf elements in ip should be between 0 and 255(incl.),
+                                        # If length is 4 and all are digits
+                isvalid=False
+                break
+    if (isvalid): # if isvalid-==True
+        print('Valid')
+    else:
+        print('Invalid')
