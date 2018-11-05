@@ -190,13 +190,16 @@ list('Hello world') # splits individual char of text_1 as elements of list
 # avg length of sentence:
 
 
-sentence = "Hi my name is Bob"
-total=0
-words = sentence.split()
-for word in words:
-    total+=len(word)
-avg_len_sentence=total/len(words)
-print(avg_len_sentence)
+def avg_sentence(chars):
+    words=chars.split() 
+    if len(words)==0: # split a string having only blank or whitespace(s) will return 0 as length
+        return None
+    else:
+        total=0
+        for word in words:
+              total+=len(word)
+        avg=total/len(words)
+    return avg
 
 
 # valid IP address:
