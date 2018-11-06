@@ -42,7 +42,19 @@ from
 from employee)a
 where a.rank = 2
 
-#5) Apple Orange difference in a day
+#5) Apple Orange difference in a day:
+
+
+create table day_fruits( day_sale date,fruit varchar(50),quantity int);
+
+insert into day_fruits values('11/6/2018','apple',40);
+
+insert into day_fruits values('11/5/2018','orange',60);
+
+insert into day_fruits values('11/5/2018','apple',70);
+
+insert into day_fruits values('11/6/2018','orange',70);
+
 
 # if only 1 quantity for a fruit in a day:
 
