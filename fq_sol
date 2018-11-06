@@ -270,6 +270,36 @@ for k,v in words_dict.items():
         
 print(final_list)
 
+
+# Alternative of finding words with max frequency:
+
+def word_max_freq(text):
+    words_cnt={}
+    words_list=[]
+    words_cnt_list=[]
+    words=text.split()
+    if len(words)==0:
+        return None
+    else:
+        
+        for word in words:
+            if word not in words_cnt:
+                words_cnt[word]=1
+                words_list.append(word)
+            else:
+                words_cnt[word]+=1
+                
+        max_count=max(words_cnt.values())
+        
+        for i in words_list:
+            if words_cnt[i]==max_count:
+                words_cnt_list.append((i,max_count))
+        
+        return words_cnt_list
+
+
+
+
 # find min occuring word(s) in a text:
 final_list1=[]          
 min_frequency=min(words_dict.values())
