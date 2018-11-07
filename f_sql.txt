@@ -71,6 +71,12 @@ select x.day_sale,max(x.tot_quantity)-min(x.tot_quantity) as diff from (
 select day_sale,sum(a.quantity) as tot_quantity from day_fruits a group by day_s
 ale,fruit)x group by day_sale;
 
+# using case statement (2 ways):
+
+select x.day_sale,abs(sum(x.quant_apple)-sum(x.quant_orange)) as diff from (select day_sale,case when fruit='apple' then quantity else 0 end as quant_apple,case when fruit='orange' then quantity else 0 end as quant_orange from day_fruits)x group by day_sale;
+
+select day_sale,abs(sum(case when fruit='apple' then quantity else 0 end)-sum(case when fruit='orange' then quantity else 0 end)) as diff from day_fruits group by day_sale;
+
 
 
 ### NEW SQL Queries
