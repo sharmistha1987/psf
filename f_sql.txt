@@ -6,6 +6,25 @@
 
 1.
 
+select x.product_id,
+(abs(sum(p_tot)-sum(np_tot))/sum(np_tot)*100) as pct
+from
+(
+select 
+a.product_id,
+(case when promotion_id=0 then units_sold else 0 end)*b.price as np_tot,
+(case when promotion_id<>0 then units_sold else 0 end)*b.price as p_tot
+from
+sales a
+join
+products b
+on
+a.product_id=b.product_id
+where a.product_id=1224
+)x
+group by
+x.product_id
+
 2.
 # using limit:
 
