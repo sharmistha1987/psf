@@ -35,6 +35,18 @@ group by a.product_id
 having tot_transactions=
 (select max(x.tot) from (select sum(s.units_sold) as tot from sales s group by s.product_id)x);
 
+# using rownum:
+
+select product_class_id,total 
+from 
+(select * ,row_number() over(order by total desc) as rownum
+from
+(select a.product_id,b.product_class_id,sum(a.units_sold) as total 
+from sales a 
+join 
+products b 
+on a.product_id=b.product_id 
+group by a.product_id)x)y where rownum=1;
 
 3.
 select count(*) from (select a.customer_id,count(distinct a.product_id) as cnt
