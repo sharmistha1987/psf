@@ -4,6 +4,38 @@
 2. Products classes that has the highest transactions 
 3. Count of Customers who bought 2 items having('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')/ having product class (94,107)'''
 
+
+
+2.
+# using limit:
+
+select p.product_class_id,x.total
+from
+products p
+join
+(select product_id,sum(units_sold) as total 
+from
+sales
+group by product_id
+order by total desc)x
+on
+p.product_id=x.product_id 
+limit 1;
+
+# without using limit:
+
+select 
+a.product_id,b.product_class_id,
+sum(a.units_sold) as tot_transactions
+from
+sales a
+join products b
+on a.product_id=b.product_id
+group by a.product_id
+having tot_transactions=
+(select max(x.tot) from (select sum(s.units_sold) as tot from sales s group by s.product_id)x);
+
+
 3.
 select count(*) from (select a.customer_id,count(distinct a.product_id) as cnt
 from 
