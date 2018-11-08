@@ -1,5 +1,8 @@
 
-'''Percentage increase in revenue compared to promoted and non-promoted products. 2. Products classes that has the highest transactions 3. Count of Customers who bought 2 items ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')'''
+'''
+1.Percentage increase in revenue compared to promoted and non-promoted products. 
+2. Products classes that has the highest transactions 
+3. Count of Customers who bought 2 items ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')'''
 
 3.
 select a.customer_id,count(*) 
