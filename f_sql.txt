@@ -5,7 +5,7 @@
 3. Count of Customers who bought 2 items ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')'''
 
 3.
-select a.customer_id,count(*) 
+select a.customer_id,count(distinct a.product_id) as cnt
 from 
 sales a 
 join 
@@ -14,7 +14,7 @@ where
 a.product_id=b.product_id
 and
 b.product_name in ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')  
-group by a.customer_id having count(*)=2;
+group by a.customer_id having cnt=2;
 
 
 '''
