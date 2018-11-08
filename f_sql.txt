@@ -9,17 +9,14 @@
 2.
 # using limit:
 
-select p.product_class_id,x.total
+select a.product_id,b.product_class_id,sum(a.units_sold) as tot_transactions 
 from
-products p
+sales a
 join
-(select product_id,sum(units_sold) as total 
-from
-sales
-group by product_id
-order by total desc)x
-on
-p.product_id=x.product_id 
+products b
+on a.product_id=b.product_id
+group by a.product_id
+order by tot_transactions desc
 limit 1;
 
 # without using limit:
