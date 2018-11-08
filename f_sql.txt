@@ -2,10 +2,10 @@
 '''
 1.Percentage increase in revenue compared to promoted and non-promoted products. 
 2. Products classes that has the highest transactions 
-3. Count of Customers who bought 2 items ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')'''
+3. Count of Customers who bought 2 items having('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')/ having product class (94,107)'''
 
 3.
-select a.customer_id,count(distinct a.product_id) as cnt
+select count(*) from (select a.customer_id,count(distinct a.product_id) as cnt
 from 
 sales a 
 join 
@@ -13,8 +13,8 @@ products b
 where 
 a.product_id=b.product_id
 and
-b.product_name in ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')  
-group by a.customer_id having cnt=2;
+b.product_name in ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine') # b.product_class_id in (94,107)  
+group by a.customer_id having cnt=2)x;
 
 
 '''
