@@ -1,3 +1,19 @@
+
+'''Percentage increase in revenue compared to promoted and non-promoted products. 2. Products classes that has the highest transactions 3. Count of Customers who bought 2 items ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')'''
+
+3.
+select a.customer_id,count(*) 
+from 
+sales a 
+join 
+products b 
+where 
+a.product_id=b.product_id
+and
+b.product_name in ('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')  
+group by a.customer_id having count(*)=2;
+
+
 '''
 SQL questions -
 A table schema with tables like employee, department, 
