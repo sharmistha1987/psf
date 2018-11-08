@@ -4,7 +4,7 @@
 2. Products classes that has the highest transactions 
 3. Count of Customers who bought 2 items having('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')/ having product class (94,107)'''
 
-
+1.
 
 2.
 # using limit:
