@@ -5,7 +5,14 @@
 3. Count of Customers who bought 2 items having('Bravo Large Canned Shrimp','Excel Monthly Computer Magazine')/ having product class (94,107)'''
 
 1.
+# pct of sales of promoted products:
 
+select (x.promotion-x.no_promotion)*100/(x.no_promotion) as pct from 
+(select sum(case when sales.promotion_id=0 then sales.store_sales else 0 end) as no_promotion,
+sum(case when sales.promotion_id<>0 then sales.store_sales else 0 end) as promotion
+from sales sales)x;
+
+# pct increase:
 select x.product_id,
 (abs(sum(p_tot)-sum(np_tot))/sum(np_tot)*100) as pct
 from
@@ -20,7 +27,6 @@ join
 products b
 on
 a.product_id=b.product_id
-where a.product_id=1224
 )x
 group by
 x.product_id
