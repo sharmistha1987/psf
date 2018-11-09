@@ -180,24 +180,22 @@ from tbl
 where population > 100000
 
 #2
-Select c.customer_id , count(distinct o.product_id) as no_products
-from customers c inner join orders o
-on customers.customer_id = orders.order_id
-group by c.customer_id
-having count(distinct o.product_id) > 10
+Select s.customer_id , count(distinct s.product_id) as no_products
+from sales s
+group by s.customer_id
+having count(distinct s.product_id) > 10
 
 #3
-select c.customer_id
-from (Select c.customer_id , dense_rank() over(order by 
-                                          EXTRACT(epoch from dob)::int /86400)
-             as rank
-            ,count(distinct o.product_id) as no_products
-from customers c inner join orders o
-on customers.customer_id = orders.order_id
-group by c.customer_id, dense_rank() over(order by 
-                                          EXTRACT(epoch from dob)::int /86400)
-having count(distinct o.product_id) > 1)c 
-where c.rank = 1
+select a.customer_id,timestampdiff(year,birthdate,curdate()) as age,cnt 
+from customers a
+join
+(
+select customer_id,count(distinct product_id) as cnt
+from sales
+group by customer_id having cnt>10)b
+on a.customer_id=b.customer_id
+order by age
+limit 1
 
 #2. Top earning person in each department
 
