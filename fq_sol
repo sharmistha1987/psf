@@ -225,7 +225,9 @@ else:
 #Recursively parse a string for a pattern that can be either 1 or 2 characters long :
 
 def recurs_pattern(s,p):
-    if len(s)<len(p):
+    if len(s)<1 or len(p)<1:
+        return None
+    elif len(s)<len(p):
         return False
     else:
         if s[0]==p or s[0:2]==p:
