@@ -160,8 +160,8 @@ text_1.count('Hello World')
 text_1='Hello World me Hello World Sam Hello World us'
 text_srch='Hello'
 count=0
-for i in text_1.split():
-    if i==text_srch:
+for word in text_1.split():
+    if word.strip()==text_srch:
         count+=1
 print(count)
     
