@@ -360,6 +360,7 @@ str_text.count('hello world')
 
 
 def palindrome(word):
+    word=word.lower()
     if word==word[::-1]:
         print(word,'is a palindrome')
     else:
