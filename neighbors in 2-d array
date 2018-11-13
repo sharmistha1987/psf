@@ -1,0 +1,31 @@
+def frd_cnt(mylist):
+    if len(mylist)<1:
+        return None
+    frnd_cnt={}
+    for i in mylist: # i is tuple
+        if len(i)>1: #tuple with 2 members (have friend)
+            for x in i:
+                    if x not in frnd_cnt:
+                        frnd_cnt[x]=1
+                    else:
+                        frnd_cnt[x]+=1
+
+        else:
+            if i not in frnd_cnt: #tuple with one member (no friend)
+                frnd_cnt[i]=0
+                
+    return frnd_cnt
+    
+    
+    frd_cnt([('A','B'),('A','C'),('B','D'),('B','C'),('R','M'),('S'),('P'),('A')])
+   
+
+Ans:  {'A': 2, 'B': 3, 'C': 2, 'D': 1, 'M': 1, 'P': 0, 'R': 1, 'S': 0
+
+    
+    frd_cnt([('A','B')])
+    
+    frd_cnt([['A','B'],['A','C']])
+    
+    
+    frd_cnt([('A','B'),('A','C'),('B','D'),('B','C'),('R','M'),('S'),('P'),('A')])
