@@ -1,3 +1,65 @@
+SQL questions -
+A table schema with tables like employee, department, 
+employee_to_projects, projects
+1) Select employee from departments where max salary of the 
+   department is greater than 40k
+2) Select employee assigned to projects
+3) Select employee which have the max salary in a 
+   given department
+4) Select employee with second highest salary
+
+
+
+
+#1)
+
+select id from employees where salary in (select max(salary) as max_sal from 
+employees group by department_id having max(salary)>40000)
+
+or
+
+select id from employees e1
+join
+(select department_id,max(salary) as max_sal from 
+employees group by department_id having max_sal>40000)e2
+on e1.department_id=e2.department_id
+and e1.salary=e2.max_sal
+
+
+#2)
+select a.employee_id
+from employee_to_projects a inner join projects b
+on a.project_id = b. project_id
+
+#3) 
+
+
+select id from
+(select id,dense_rank() over(partition by department_id order by salary desc) as rnk
+ from employees)x where x.rnk=1
+
+
+or 
+
+
+select id from
+employees a
+join(
+select department_id,max(salary) as max_sal from employees group by department_id
+  )b
+on a.department_id=b.department_id
+and a.salary=b.max_sal
+
+#4)select id from employees e1
+where 1=(select count(distinct e2.salary) from
+         employees e2 where e2.salary>e1.salary)
+
+or
+
+select id,salary from (select *, dense_rank() over(partition by department_id order by salary desc) as rnk
+from employees)x where rnk=2
+
+
 
 '''
 1.Percentage increase in revenue compared to promoted and non-promoted products. 
