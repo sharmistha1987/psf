@@ -211,10 +211,26 @@ join
 (
 select customer_id,count(distinct product_id) as cnt
 from sales
-group by customer_id having cnt>10)b
+group by customer_id having cnt>1)b
 on a.customer_id=b.customer_id
 order by age
 limit 1
+
+or
+
+select * from (select 
+a.customer_id,
+timestampdiff(year,birthdate,curdate()) as age
+from customers a
+join
+(
+select customer_id,count(distinct product_id) as cnt
+from sales
+group by customer_id having cnt>10)b
+on a.customer_id=b.customer_id
+)x
+where x.age=(select min(age) from (select timestampdiff(year,birthdate,curdate())+1 as age from customers)c)
+
 
 #2. Top earning person in each department
 
