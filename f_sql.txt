@@ -231,6 +231,24 @@ on a.customer_id=b.customer_id
 )x
 where x.age=(select min(age) from (select timestampdiff(year,birthdate,curdate())+1 as age from customers)c)
 
+#4.
+
+select stores.name,count(sales.product_id) from 
+stores stores
+join
+sales sales
+on stores.store_id=sales.store_id
+
+or
+# to count no of products sold per store:
+
+select stores.name,count(sales.product_id) from 
+stores stores
+join
+sales sales
+on stores.store_id=sales.store_id
+group by stores.name
+
 
 #2. Top earning person in each department
 
