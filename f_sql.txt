@@ -234,9 +234,8 @@ where x.age=(select min(age) from (select timestampdiff(year,birthdate,curdate()
 
 #2. Top earning person in each department
 
-select employee_id
-from (select employee_id, department_id, sal
-             dense_rank() over(partition by department_id order by salary desc) as rank
-      from   employee
-      order by department_id, sal desc)
-where rank = 1
+select id
+from (select id,
+             dense_rank() over(partition by department_id order by salary desc) as rnk
+      from employees)x
+where rnk = 1
