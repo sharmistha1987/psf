@@ -50,7 +50,9 @@ select department_id,max(salary) as max_sal from employees group by department_i
 on a.department_id=b.department_id
 and a.salary=b.max_sal
 
-#4)select id from employees e1
+#4)
+
+select id from employees e1
 where 1=(select count(distinct e2.salary) from
          employees e2 where e2.salary>e1.salary)
 
