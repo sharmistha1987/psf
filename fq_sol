@@ -202,6 +202,26 @@ def avg_sentence(chars):
     return avg
 
 
+or
+
+
+def avg_len_sent(text):
+    
+    if len(text)<1 or text.isnumeric() or text.isspace():
+        return None
+    
+    words=text.split()
+    
+    #if len(words)<1:
+        #return None
+    
+    total=0
+    
+    for word in words:
+        total+=len(word)
+    avg=total/len(words)
+    return avg
+
 # valid IP address:
 
 
@@ -221,6 +241,29 @@ if(invalid ==False):
     print('Valid ip')
 else:
     print('Invalid ip')
+    
+    
+ or
+ 
+ def ip_validity(ipadd):
+    ip_list=ipadd.split('.')
+    ip_str=''.join(ip_list)
+    isvalid=True
+    
+    if len(ip_list)<4:
+        isvalid=False
+        return isvalid
+    elif not ip_str.isnumeric():
+        isvalid=False
+        return isvalid
+    else:
+        for i in ip_list:
+            if int(i)<0 or int(i)>255:
+                isvalid=False
+                break   
+        return isvalid
+ 
+ 
     
 #Recursively parse a string for a pattern that can be either 1 or 2 characters long :
 
