@@ -1,3 +1,17 @@
+imp:
+
+x=['']
+len(x) ->1
+x=['     ']
+len(x)->1
+
+x=''
+len(x.split())->0
+
+x='    '
+len(x.split()) ->0
+
+
 '''Print Max element of a given list''':
 
 mylist=[1,2,3,5,7]
@@ -338,6 +352,29 @@ def most_recur(mylist):
     for j in unique_list:
         if item_cnt[j]==max_value:
             x=(j,max_value)
+            final_list.append(x)
+    return final_list
+    
+  or
+  
+  def most_recur(mylist):
+    item_cnt={}
+    final_list=[]
+    
+    for i in mylist:
+        if str(i).isspace() or not str(i):
+            return None
+        elif i.strip() not in item_cnt:
+            item_cnt[i.strip()]=1
+            
+        else:
+            item_cnt[i.strip()]+=1
+    
+    max_value=max(item_cnt.values())
+    
+    for k,v in item_cnt.items():
+        if v==max_value:
+            x=(k,v)
             final_list.append(x)
     return final_list
 
