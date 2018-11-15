@@ -207,7 +207,7 @@ or
 
 def avg_len_sent(text):
     
-    if len(text)<1 or text.isnumeric() or text.isspace():
+    if len(str(text))<1 or str(text).isnumeric() or str(text).isspace():
         return None
     
     words=text.split()
