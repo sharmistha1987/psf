@@ -1,0 +1,29 @@
+#if start position for substring becomes optional:
+
+def substr(string,length,startpos=None):
+    
+    if len(str(string))<1 or str(string).isspace() :
+        return None
+    
+    if startpos==None or startpos==0:
+        sub=str(string)[:length]
+    else:
+        sub=str(string)[startpos:length+startpos]
+        
+        
+    return sub
+    
+ # if start position is mandatory:
+ 
+ def substr(string,startpos,length):
+    
+    if len(str(string))<1 or str(string).isspace() :
+        return None
+    
+    if startpos==0:
+        sub=str(string)[:length]
+    else:
+        sub=str(string)[startpos:length+startpos]
+        
+        
+    return sub
