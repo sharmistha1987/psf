@@ -9,9 +9,9 @@ def median(mylist):
         return None
     quot=len(mylist)//2
     if len(mylist)%2!=0:
-        median=mylist[quot]
+        median=sorted(mylist)[quot]
     else:
-        median=sum(mylist[quot-1:quot+1])/2
+        median=sum(sorted(mylist)[quot-1:quot+1])/2
     return median
 
 def median(mylist):
@@ -30,27 +30,25 @@ def median(mylist):
     return median
 
 
-
 def gcf(n1,n2):
-    if str(n1).isnumeric()==False or str(n2).isnumeric()==False:
-        return None
-    elif n1<0 or n2<0:
+    if not str(n1).isnumeric() or not str(n2).isnumeric() or int(n1)<0 or int(n2)<0:
         return None
     elif n1==0 and n2==0:
         return 0
+    elif n1!=0 and n2==0:
+        return n1
     elif n1==0 and n2!=0:
         return n2
-    elif n2==0 and n1!=0:
-        return n1
     else:
-        if n1<n2:
-            smaller=n1
+        if int(n1)<int(n2):
+            smaller=int(n1)
         else:
-            smaller=n2
-    
+            smaller=int(n2)
+        
         i=1
+        
         while i<=smaller:
-            if n1%1==0 and n2%i==0:
+            if int(n1)%i==0 and int(n2)%i==0:
                 gcf=i
             i+=1
         return gcf
