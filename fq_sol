@@ -316,6 +316,31 @@ for k,v in words_dict.items():
 print(final_list)
 
 
+or
+
+
+def most_recur(mylist):
+    item_cnt={}
+    unique_list=[]
+    final_list=[]
+    
+    for i in mylist:
+        if str(i).isspace() or not str(i):
+            return None
+        elif i not in item_cnt:
+            item_cnt[i]=1
+            unique_list.append(i)
+        else:
+            item_cnt[i]+=1
+    
+    max_value=max(item_cnt.values())
+    
+    for j in unique_list:
+        if item_cnt[j]==max_value:
+            x=(j,max_value)
+            final_list.append(x)
+    return final_list
+
 # Alternative of finding words with max frequency:
 
 def word_max_freq(text):
